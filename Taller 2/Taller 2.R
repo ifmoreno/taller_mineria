@@ -1,5 +1,5 @@
 getwd()
-camino<-"C:\\Users\\Iván\\Desktop\\Mineria\\Taller\\Taller 2\\Bases"
+camino<-"C:\\Users\\ifmor\\Desktop\\Mineria de Datos\\taller_mineria\\Taller 2\\Bases"
 setwd(camino)
 aut<-read.csv("auto.csv",header = TRUE,sep = ",",na.strings = "?")
 #al leer poner cómo son los missing
@@ -23,3 +23,7 @@ plot(reg_mult)
 #primera gráfica a la izquierda arriba: la curvatura muestra que el modelo no esta
 #capturando todo, puede existir una no linearidad
 ?plot
+attach(aut)
+#transformacion
+reg_tra<-lm( mpg~log(displacement) + sqrt(weight) + year + I(year**2)+origin, data=aut)
+summary(reg_tra)
