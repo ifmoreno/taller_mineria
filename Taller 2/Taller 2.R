@@ -19,7 +19,7 @@ summary(reg_mult)
 #Punto4
 par(mfrow=c(2,2))
 plot(reg_mult)
-
+?aut
 #primera gráfica a la izquierda arriba: la curvatura muestra que el modelo no esta
 #capturando todo, puede existir una no linearidad
 ?plot
